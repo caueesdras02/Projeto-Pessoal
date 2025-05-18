@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Linha do Tempo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="linha_do_tempo.js" defer></script>
+</head>
+<body>
+
+  <!-- Cabeçalho com navegação -->
+  <header>
+    <h1>Nosso Amor</h1>
+    <div id="contador"></div>
+    <nav>
+      <a href="index.html">Carta</a>
+      <a href="galeria.html">Galeria</a>
+      <a href="linha_do_tempo.html" class="ativo">Linha do Tempo</a>
+      <a href="musica.html">Música</a>
+    </nav>
+  </header>
+
+  <!-- Linha do Tempo -->
+  <section class="linha-do-tempo-section">
+    <h2>🌸 Nossa Linha do Tempo 🌸</h2>
+    <div class="linha-do-tempo-container">
+      
+      <div class="evento left">
+        <div class="content">
+          <img src="img1.jpg" alt="Nosso primeiro encontro" />
+          <div class="texto">
+            <h3>01/05/2024 - Primeiro Encontro</h3>
+            <p>O dia em que tudo começou. Foi mágico! ✨</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="evento right">
+        <div class="content">
+          <img src="img2.jpg" alt="Viagem" />
+          <div class="texto">
+            <h3>15/07/2024 - Nossa primeira viagem</h3>
+            <p>Uma aventura incrível juntos! 🏖️</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="evento left">
+        <div class="content">
+          <img src="img3.jpg" alt="Aniversário" />
+          <div class="texto">
+            <h3>12/10/2024 - Aniversário</h3>
+            <p>Fizemos um bolo juntos e foi perfeito! 🎂</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adicione mais eventos aqui -->
+
+    </div>
+  </section>
+
+  <!-- Modal para mostrar conteúdo do evento -->
+  <div id="modalEvento">
+    <div class="modal-content">
+      <span class="close-btn" onclick="fecharModal()">&times;</span>
+      <h2 id="modalTitulo"></h2>
+      <p id="modalData"></p>
+      <p id="modalTexto"></p>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>Feito com ❤️ para nós</p>
+  </footer>
+
+</body>
+</html>

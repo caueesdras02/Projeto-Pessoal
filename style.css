@@ -1,0 +1,326 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #fff0f5;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+    background: #ffb6c1;
+    color: white;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+#contador {
+    font-size: 1rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background-color: #ff69b4;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #ff1493;
+}
+
+main {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #ffb6c1;
+    color: white;
+    padding: 1rem;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+}
+
+/* Linha do tempo */
+
+.linha-do-tempo-section {
+    padding: 2rem 1rem;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    position: relative;
+}
+
+.linha-do-tempo-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #ff1493;
+}
+
+/* Linha vertical */
+.linha-do-tempo-container {
+    position: relative;
+    padding-left: 50px;
+    border-left: 4px solid #ff69b4;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Evento da linha do tempo */
+.evento {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.evento.left {
+    flex-direction: row;
+}
+
+.evento.right {
+    flex-direction: row-reverse;
+    padding-right: 50px;
+    text-align: right;
+}
+
+.evento::before {
+    content: "💖"; /* Ícone que percorre o caminho, pode ser animado com JS */
+    position: absolute;
+    left: -34px;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    user-select: none;
+}
+
+/* Foto do evento */
+.evento img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.evento img:hover {
+    transform: scale(1.1);
+}
+
+/* Texto do evento */
+.texto {
+    max-width: 400px;
+}
+
+.evento.left .texto {
+    text-align: left;
+}
+
+.evento.right .texto {
+    text-align: right;
+}
+
+.texto h3 {
+    font-size: 1.2rem;
+    color: #d81b60;
+    margin-bottom: 0.3rem;
+}
+
+.texto p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Modal de evento */
+#modalEvento {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#modalEvento .modal-content {
+    background: #fff0f5;
+    padding: 2rem;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 20px #ff69b4;
+    position: relative;
+    text-align: center;
+}
+
+#modalEvento .modal-content h2 {
+    margin-bottom: 0.5rem;
+    color: #d81b60;
+}
+
+#modalEvento .modal-content p {
+    margin-bottom: 1.2rem;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+#modalEvento .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 1.8rem;
+    color: #d81b60;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#modalEvento .close-btn:hover {
+    color: #ff1493;
+}
+
+/* Botão padrão */
+button {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+/* Corações flutuantes */
+.heart {
+    position: absolute;
+    font-size: 2rem;
+    color: #ff69b4;
+    animation: flutuar 4s linear infinite;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .linha-do-tempo-container {
+        padding-left: 30px;
+    }
+    .evento {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    .evento.right {
+        padding-right: 0;
+    }
+    .evento::before {
+        left: -28px;
+        top: -20px;
+        transform: none;
+    }
+    .evento img {
+        width: 120px;
+        height: 120px;
+    }
+    .texto {
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+/* Stand de fotos estilo "stand" */
+.stand-fotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.foto-item {
+    background: #fff0f5;
+    border-radius: 12px;
+    padding: 0.5rem;
+    box-shadow: 0 6px 15px rgba(255, 105, 180, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.foto-item:hover {
+    transform: translateY(-10px) rotate(-3deg);
+    box-shadow: 0 12px 30px rgba(255, 105, 180, 0.6);
+}
+
+/* Responsivo para stand de fotos */
+@media (max-width: 480px) {
+    .stand-fotos {
+        gap: 1rem;
+    }
+    .foto-item {
+        width: 100px;
+        height: 100px;
+    }
+}
